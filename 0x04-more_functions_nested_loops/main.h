@@ -1,5 +1,3 @@
-fndef MAIN_H
-
 #define MAIN_H
 
 
@@ -33,7 +31,3 @@ void print_triangle(int size);
 void num_to_char(unsigned int);
 
 void print_number(int n);
-
-
-
-#endif /* MAIN_H */
