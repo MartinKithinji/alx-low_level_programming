@@ -9,7 +9,6 @@
  * @argv: argument vector
  * Return: int
  */
-
 int main(int argc, char *argv[])
 
 {
@@ -27,10 +26,8 @@ int main(int argc, char *argv[])
 
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
-
 		{
-
-		if (!((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-'))
+			if (!((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-'))
 
 			{
 				printf("Error\n");
@@ -45,5 +42,4 @@ int main(int argc, char *argv[])
 	printf("%d\n", sum);
 
 	return (0);
-
 }
