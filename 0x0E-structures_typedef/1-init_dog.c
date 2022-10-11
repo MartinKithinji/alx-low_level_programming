@@ -1,29 +1,26 @@
-#include <stdio.h>
+#include "dog.h"
 
 /**
- * main - causes an infinite loop
- * Return: 0
+ * init_dog - initializes a variable of type struct dog
+ * @d: pointer to a variable of type struct do
+ * @name: sring containing name of the dog
+ * @age: float containing dog's age
+ * @owner: string containing the name of the dog's owner
+ * Return: void
  */
 
-int main(void)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 
 {
-	int i;
 
-	printf("Infinite loop incoming :(\n");
+	if (d == 0)
 
-	i = 0;
+		return;
 
-	/* while (i < 10) */
+	d->name = name;
 
-	/* { */
+	d->age = age;
 
-	/*	putchar(i); */
-
-	/* } */
-
-	printf("Infinite loop avoided! \\o/\n");
-
-	return (0);
+	d->owner = owner;
 
 }
