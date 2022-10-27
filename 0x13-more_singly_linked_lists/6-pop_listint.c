@@ -3,7 +3,7 @@
 /**
  * pop_listint - deleted the first node and returns its value
  * @head: The head node
- * return: @val the value of that head
+ * Return: @val the value of that head
  */
 
 int pop_listint(listint_t **head)
