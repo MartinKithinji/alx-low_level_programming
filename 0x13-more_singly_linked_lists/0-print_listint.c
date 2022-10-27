@@ -9,10 +9,7 @@
 size_t print_listint(const listint_t *h)
 
 {
-
 	int cnt = 0;
-
-
 
 	while (h)
 
