@@ -1,86 +1,56 @@
-#include "holberton.h"
-#include "bits.h"
+#include <stdlib.h>
+
+#include <stdio.h>
+
+#include "main.h"
+
 
 /**
- * _strlen - finding the lenght of a string.
- * @s: first pointer
- * Return: it returns the length of the string.
- */
-
-int _strlen(char *s)
-
-{
-	int str;
-
-	str = 0;
-
-	while (s[str] != '\0')
-
-		str++;
-
-	return (str);
-}
-
-/**
- * x_to_the_n - Fucntion that does to the power of
- * @x: the number
- * @n: the eleveado
- * Return:@number the result
- */
-
-int x_to_the_n(int x, int n)
-
-{
-	int i;
-
-	int number = 1;
-
-	for (i = 0; i < n; ++i)
-
-		number *= x;
-
-	return (number);
-
-}
-
-/**
- * binary_to_uint - Converts binary to decimals
- * @b: pointer to char given by main
- * Return:@result the result
+ * binary_to_uint - function that converts binary number to unsigned int
+ * @b: pointer to char string input
+ * Return: always successful
  */
 
 unsigned int binary_to_uint(const char *b)
+
 {
-	int j = 0, operand = 0, len = 0;
+	unsigned int count = 0;
 
-	unsigned int result = 0;
+	unsigned int check = 1;
 
-	if (!b)
+	int x;
+
+	if (b == NULL)
 
 		return (0);
 
-	len = _strlen((char *) b);
+	x = 0;
 
-	while (b[j] != '\0')
+	while (b[x] != '\0')
 
 	{
+		if (b[x] != '0' && b[x] != '1')
 
-		if (b[j] < 48 || b[j] > 49)
+		{
 
 			return (0);
 
-		operand = x_to_the_n(2, j);
+		}
 
-		if (b[len - 1] == 49)/*Ascci code of 1*/
+		count <<= 1;
 
-			result += operand;
+		if (b[x] == '1')
 
-		len--;
+		{
 
-		j++;
+			count ^= check;
+
+		}
+
+		x++;
 
 	}
 
-	return (result);
+	return (count);
 
 }
