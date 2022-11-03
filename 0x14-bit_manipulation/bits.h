@@ -1,4 +1,4 @@
-ifndef MIKE_HEAD_H
+#ifndef MIKE_HEAD_H
 
 #define MIKE_HEAD_H
 
