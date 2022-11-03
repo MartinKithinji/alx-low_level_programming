@@ -1,46 +1,50 @@
-#include "holberton.h"
+#include <stdlib.h>
+
+#include <stdio.h>
+
+#include "main.h"
 
 /**
- * print_binary - prints decimal to binary
- * @n: number to convert
- * Return: nothing
+ * print_binary - function that prints binary representation of number
+ * @n: The number to representing in binary
+ * Return: Nothing
  */
 
 void print_binary(unsigned long int n)
-
 {
-	unsigned long int tmp = n;
-
-	int i, count = 0;
 
 	if (n == 0)
 
-		_putchar ('0');
-
-	while (tmp > 0)
-
 	{
+		_putchar('0');
 
-		tmp = tmp >> 1;
-
-		count++;
-
+		return;
 	}
 
-	for (count -= 1; count >= 0; count--)
+	_divide(n);
+}
 
-	{
+/**
+ * _divide - function that divides binary
+ * @n: unsigned long  int type
+ * Return: always successful
+ */
 
-		i = n >> count;
+void _divide(unsigned long int n)
 
-		if (i & 1)
+{
+	if (n < 1)
 
-			_putchar('1');
+		return;
 
-		else
+	_divide(n >> 1);
 
-			_putchar('0');
+	if (n & 1)
 
-	}
+		_putchar('1');
+
+	else
+
+		_putchar('0');
 
 }
